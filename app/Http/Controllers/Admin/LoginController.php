@@ -6,10 +6,10 @@ use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use Illuminate\Foundation\Auth\AuthenticatesUsers;
 use Illuminate\Support\Facades\Auth;
-
 class LoginController extends Controller
 {
     // use AuthenticatesUsers;
+ 
 
     /**
      * Where to redirect admins after login.
@@ -40,14 +40,16 @@ class LoginController extends Controller
      * @return \Illuminate\Http\RedirectResponse
      * @throws \Illuminate\Validation\ValidationException
      */
+    
     public function login(Request $request)
     {
+       
         
         $this->validate($request, [
             'email'   => 'required|email',
             'password' => 'required|min:6'
         ]);
-        
+       
         if (Auth::guard('admin')->attempt([  'email' => $request->email,
             'password' => $request->password
         ], $request->get('remember'))) {

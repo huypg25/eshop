@@ -160,7 +160,11 @@ return [
         Illuminate\Session\SessionServiceProvider::class,
         Illuminate\Translation\TranslationServiceProvider::class,
         Illuminate\Validation\ValidationServiceProvider::class,
+        App\Providers\SettingServiceProvider::class,
         Illuminate\View\ViewServiceProvider::class,
+        App\Providers\RepositoryServiceProvider::class,
+
+
 
         /*
          * Package Service Providers...
